@@ -1,5 +1,4 @@
 footer {
-  text-align: center;
   color: #FFFFFF;
   background-color: #686FBF;
   display: block;
@@ -64,3 +63,19 @@ li a:hover {
 li a.branding:hover {
     background-color: #454A7F;
 }
+
+#footerleft {
+  float: left;
+  width:33.33333%;
+  text-align:left;
+}
+#copyright {
+  float: left;
+  width:33.33333%;
+  text-align:center;
+}
+#social {
+ float: left;
+ width:33.33333%;
+ text-align:right;
+}​
