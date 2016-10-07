@@ -15,10 +15,16 @@ footer {
 }
 
 #container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#textbox {
 	background-color: #F3ECFF;
   border-radius: 5px;
-	width: 85%;
+	width: 100%;
 	margin: 0 auto;
+  height: 300px;
 }
 
 .navbar-mycolour {
@@ -48,4 +54,8 @@ footer {
 
 .navbar-mycolour .navbar-toggle .icon-bar {
   background-color: #FFFFFF;
+}
+
+#social a {
+  color: black;
 }
