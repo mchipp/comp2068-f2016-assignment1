@@ -1,32 +1,60 @@
+/***MAIN BODY ATTRIBUTES***/
 body {
   height: 100%;
   padding-top: 65px;
   padding-bottom: 65px;
 }
 
+/***FOOTER ATTRIBUTES***/
 footer {
   color: #FFFFFF;
   background-color: #686FBF;
-  font-size: 10px;
+  font-size: 12px;
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
+  font-family: 'Cormorant Garamond', serif;
 }
 
+/***MAIN CONTAINER LAYOUT***/
 #container {
   width: 80%;
   margin: 0 auto;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
 }
 
-#textbox {
+/****SECTIONS****/
+#textbox{
 	background-color: #F3ECFF;
   border-radius: 5px;
 	width: 100%;
 	margin: 0 auto;
   height: 300px;
+  padding: 15px;
 }
 
+#textbox-main {
+	background-color: #F3ECFF;
+  border-radius: 5px;
+	width: 77%;
+	margin: 0 auto;
+  height: 300px;
+  padding: 15px;
+  font-family: "Helvetica", "sans-serif";
+  font-size: 18px;
+  float: left;
+}
+
+#twitter-box {
+  width: 20%;
+  margin-left: 3%;
+  float: left;
+}
+/***END OF SECTIONS***/
+
+/***CUSTOM NAVBAR SETTINGS***/
 .navbar-mycolour {
   background-color: #454A7F;
   color: #FFFFFF;
@@ -35,7 +63,8 @@ footer {
 
 .navbar-mycolour .navbar-nav > li > a {
   color: #FFFFFF;
-  font-size: 10px;
+  font-size: 14px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .navbar-mycolour .navbar-nav > li > a:hover {
@@ -46,6 +75,9 @@ footer {
 .navbar-mycolour .navbar-brand {
   background-color: #454A7F;
   color: #FFFFFF;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .navbar-mycolour .navbar-nav > li > a.branding:hover {
@@ -55,7 +87,9 @@ footer {
 .navbar-mycolour .navbar-toggle .icon-bar {
   background-color: #FFFFFF;
 }
+/***END OF NAVBAR SETTINGS***/
 
+/***SOCIAL BUTTONS DIV***/
 #social a {
   color: black;
 }
