@@ -2,7 +2,26 @@
   <div id="container">
     <h1><%= title %></h1>
     <section id="textbox">
-        <p>Text goes here.</p>
+      <form method="post">
+      <div class="form-group">
+        <label class="control-label col-sm-1">Name:</label>
+        <input name="name" required placeholder="Name" maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-1">E-mail:</label>
+        <input name="email" required placeholder="yourname@yourdomain.ca" maxlength="50" />
+      </div>
+      <div class="form-group">
+          <label class="control-label col-sm-1">Inquiry:</label>
+          <textarea rows="4" cols="70" name="inquiry" required placeholder="Type your questions here"></textarea>
+      </div>
+      <div class="g-recaptcha col-sm-offset-1" data-sitekey="6LdYAAkUAAAAAAJmVNaDhI7IvHlZzdR6CorzyWQz"></div>
+      <div class="col-sm-offset-1">
+          <button type="submit" class="btn btn-warning">Submit</button>
+      </div>
+    </form>
     </section>
   </div>
+  <!--<div class="g-recaptcha" data-sitekey=""></div>
+  <script src='https://www.google.com/recaptcha/api.js'></script>-->
 <%- include partials/footer.ejs %>
