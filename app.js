@@ -33,16 +33,12 @@ smtpTrans = nodemailer.createTransport('smtps://chipp.mark@gmail.com:Omicron158@
       text: req.body.name + ' ' + req.body.email + ' ' + req.body.message
   };
 
-  smtpTrans.sendMail(mailOpts, function (error, response) {
-      //Email not sent
-      if (error) {
-          res.render('contact', { title: 'Contact Me', msg: 'Error occured, message not sent.', err: true, page: 'contact' })
-      }
-      //Yay!! Email sent
-      else {
-          res.render('contact', { title: 'Contact Me', msg: 'Message sent! Thank you.', err: false, page: 'contact' })
-      }
-  });
+  smtpTrans.sendMail(mailOpts, function(error, response){
+    if(error) {
+      console.log(error)}
+    else {
+      console.log('Message sent: ')}
+});
 });
 
 // view engine setup
