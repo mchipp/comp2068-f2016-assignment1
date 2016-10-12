@@ -100,3 +100,20 @@ footer {
 #social a {
   color: black;
 }
+
+.btn-custom { 
+  background-color: hsl(273, 23%, 78%) !important;
+  background-repeat: repeat-x; 
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f5f2f7", endColorstr="#c8b9d3"); 
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f5f2f7), to(#c8b9d3)); 
+  background-image: -moz-linear-gradient(top, #f5f2f7, #c8b9d3); 
+  background-image: -ms-linear-gradient(top, #f5f2f7, #c8b9d3); 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f2f7), color-stop(100%, #c8b9d3)); 
+  background-image: -webkit-linear-gradient(top, #f5f2f7, #c8b9d3); 
+  background-image: -o-linear-gradient(top, #f5f2f7, #c8b9d3); 
+  background-image: linear-gradient(#f5f2f7, #c8b9d3); 
+  border-color: #c8b9d3 #c8b9d3 hsl(273, 23%, 73.5%); 
+  color: #333 !important; 
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.29); 
+z-indexwebkit-font-smoothing: antialiased; 
+}
