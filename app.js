@@ -28,7 +28,7 @@ app.post('/contact', function (req, res) {
     replyTo: req.body.email,
     to: 'chipp.mark@gmail.com', // list of receivers
     subject: 'Contact form', // Subject line
-    text: req.body.message // plaintext body
+    text: req.body.message + " from " + req.body.name + " at " + req.body.email // plaintext body
   };
 
   smtpTrans.sendMail(mailOpts, function(error, response){
