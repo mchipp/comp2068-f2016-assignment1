@@ -13,6 +13,7 @@ var projects = require('./routes/projects');
 var services = require('./routes/services');
 var contact = require('./routes/contact');
 var contact_thanks = require('./routes/contact-thanks');
+var contact_error = require('./routes/contact-error');
 
 var app = express();
 
@@ -33,7 +34,7 @@ app.post('/contact', function (req, res) {
   smtpTrans.sendMail(mailOpts, function(error, response){
     if(error){
       console.log(error);
-      res.end("error");
+      res.redirect('/contact-error');
     }
     else{
       console.log("Message sent: " + response.message);
@@ -62,6 +63,7 @@ app.use('/projects', projects);
 app.use('/services', services);
 app.use('/contact', contact);
 app.use('/contact-thanks', contact_thanks);
+app.use('/contact-error', contact_error);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
