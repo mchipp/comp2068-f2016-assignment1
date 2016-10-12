@@ -3,10 +3,12 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+
+// must include/require various NPMs that were downloaded 
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
-var bodyparser = require('body-parser');
 
+//setup routes to each of the page sections
 var routes = require('./routes/index');
 var about = require('./routes/about');
 var projects = require('./routes/projects');
@@ -17,9 +19,12 @@ var contact_error = require('./routes/contact-error');
 
 var app = express();
 
+// make us of body-parser functions to extract fields from mail form
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
+// Nodemailer code learned from the Nodemailer site!
 app.post('/contact', function (req, res) {
   var smtpTrans = nodemailer.createTransport('smtps://chipp.mark@gmail.com:Omicron158@smtp.gmail.com');
 
@@ -31,14 +36,15 @@ app.post('/contact', function (req, res) {
     text: req.body.message + " from " + req.body.name + " at " + req.body.email // plaintext body
   };
 
+  //Transmits mail
   smtpTrans.sendMail(mailOpts, function(error, response){
     if(error){
       console.log(error);
-      res.redirect('/contact-error');
+      res.redirect('/contact-error'); // If there is an error, redirects user to an error page
     }
     else{
       console.log("Message sent: " + response.message);
-      res.redirect('/contact-thanks');
+      res.redirect('/contact-thanks'); // If everything works, redirects user to a thank you page
     }
   });
 });
