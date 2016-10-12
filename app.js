@@ -6,39 +6,39 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 var bodyparser = require('body-parser');
-var xoauth2 = require('xoauth2');
 
 var routes = require('./routes/index');
 var about = require('./routes/about');
 var projects = require('./routes/projects');
 var services = require('./routes/services');
 var contact = require('./routes/contact');
+var contact_thanks = require('./routes/contact-thanks');
 
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post('/contact', function (req, res, next) {
-  var mailOpts, smtpTrans;
-  //Setup Nodemailer transport, I chose gmail. Create an application-specific password to avoid problems.
-
-smtpTrans = nodemailer.createTransport('smtps://chipp.mark@gmail.com:Omicron158@smtp.gmail.com');
+app.post('/contact', function (req, res) {
+  var smtpTrans = nodemailer.createTransport('smtps://chipp.mark@gmail.com:Omicron158@smtp.gmail.com');
 
   //Mail options
-  mailOpts = {
-      //from: '"Fred Foo ?" <foo@blurdybloop.com>', // sender address
-      //from: ''"Fred Foo"'', //grab form data from the request body object
-      to: 'chipp.mark@gmail.com',
-      subject: 'Website contact form',
-      text: req.body.name + ' ' + req.body.email + ' ' + req.body.message
+  var mailOpts = {
+    replyTo: req.body.email,
+    to: 'chipp.mark@gmail.com', // list of receivers
+    subject: 'Contact form', // Subject line
+    text: req.body.message // plaintext body
   };
 
   smtpTrans.sendMail(mailOpts, function(error, response){
-    if(error) {
-      console.log(error)}
-    else {
-      console.log('Message sent: ')}
+    if(error){
+      console.log(error);
+      res.end("error");
+    }
+    else{
+      console.log("Message sent: " + response.message);
+      res.redirect('/contact-thanks');
+    }
   });
 });
 
@@ -61,6 +61,7 @@ app.use('/about', about);
 app.use('/projects', projects);
 app.use('/services', services);
 app.use('/contact', contact);
+app.use('/contact-thanks', contact_thanks);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
