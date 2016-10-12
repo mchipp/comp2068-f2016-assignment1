@@ -1,3 +1,10 @@
+/*
+* File: contact-error.js
+* Author: Mark Chipp
+* Web site: Portfolio
+* Description: Router for the Contact Me Error page
+*/
+
 var express = require('express');
 var router = express.Router();
 

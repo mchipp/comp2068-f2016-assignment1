@@ -1,3 +1,10 @@
+/*
+* File: app.js
+* Author: Mark Chipp
+* Web site: Portfolio
+* Description: Main application file, drvier for my portfolio web site application
+*/
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -101,6 +108,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;

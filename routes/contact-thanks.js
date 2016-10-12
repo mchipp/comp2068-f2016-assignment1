@@ -1,3 +1,10 @@
+/*
+* File: contact-thanks.js
+* Author: Mark Chipp
+* Web site: Portfolio
+* Description: Router for the Contact Me thank you page
+*/
+
 var express = require('express');
 var router = express.Router();
 
