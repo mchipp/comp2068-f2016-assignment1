@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 var bodyparser = require('body-parser');
+var xoauth2 = require('xoauth2');
 
 var routes = require('./routes/index');
 var about = require('./routes/about');
@@ -38,7 +39,7 @@ smtpTrans = nodemailer.createTransport('smtps://chipp.mark@gmail.com:Omicron158@
       console.log(error)}
     else {
       console.log('Message sent: ')}
-});
+  });
 });
 
 // view engine setup
