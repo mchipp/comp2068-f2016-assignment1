@@ -26,11 +26,11 @@ smtpTrans = nodemailer.createTransport('smtps://chipp.mark@gmail.com:Omicron158@
 
   //Mail options
   mailOpts = {
-      from: '"Fred Foo ?" <foo@blurdybloop.com>', // sender address
+      //from: '"Fred Foo ?" <foo@blurdybloop.com>', // sender address
       //from: ''"Fred Foo"'', //grab form data from the request body object
       to: 'chipp.mark@gmail.com',
       subject: 'Website contact form',
-      text: req.body.name + " " + req.body.email + " " + req.body.message
+      text: req.body.name + ' ' + req.body.email + ' ' + req.body.message
   };
 
   smtpTrans.sendMail(mailOpts, function (error, response) {
