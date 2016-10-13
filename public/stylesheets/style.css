@@ -29,10 +29,10 @@ footer {
   width: 80%;
   margin: 0 auto;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
+  font-size: 22px;
 }
 
-/***SECTIONS***/
+/***SECTIONS***
 #textbox{
 	background-color: #F3ECFF;
   border-radius: 5px;
@@ -40,18 +40,15 @@ footer {
 	margin: 0 auto;
   height: 400px;
   padding: 15px;
-}
+}*/
 
 #textbox-main {
 	background-color: #F3ECFF;
   border-radius: 5px;
-	width: 77%;
-	margin: 0 auto;
-  height: 300px;
+  width: 100%;
+  margin: 0 auto;
+  height: 400px;
   padding: 15px;
-  font-family: "Helvetica", "sans-serif";
-  font-size: 18px;
-  float: left;
 }
 
 #twitter-box {
@@ -114,6 +111,24 @@ footer {
   background-image: linear-gradient(#f5f2f7, #c8b9d3); 
   border-color: #c8b9d3 #c8b9d3 hsl(273, 23%, 73.5%); 
   color: #333 !important; 
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.29); 
-z-indexwebkit-font-smoothing: antialiased; 
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.29);  
+  -webkit-font-smoothing: antialiased;
+}
+
+section#s1, section#s2, section#s3 {
+  width: 30%;
+  float: left;
+  padding-bottom: 65px;
+}
+
+section#s2, section#s3 {
+  margin-left: 5%;
+}
+
+h1#sections {
+  text-align: center;
+}
+
+div#centred {
+  text-align: center;
 }
